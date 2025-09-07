@@ -34,6 +34,11 @@ public class BitManipulation{
         return n | bitMask;
     }
 
+    public static int clearLastIBits(int n, int i){
+        int bitMask = (~0)<<i;
+        return n & bitMask;
+    }
+
     public static void main(String args[]){
         OddorEven(3); // odd
         OddorEven(6); // even
@@ -49,6 +54,9 @@ public class BitManipulation{
         System.out.println("-----------");
 
         System.out.println(updateIthBit(10, 2, 1));
+        System.out.println("-----------");
+
+        System.out.println(clearLastIBits(15, 2));
         System.out.println("-----------");
     } 
 }
