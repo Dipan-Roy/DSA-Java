@@ -68,5 +68,7 @@ public class BitManipulation{
 
         System.out.println(clearBitsInRange(10, 2, 4));
         System.out.println("-----------");
+
+        // test - remove later
     } 
 }
