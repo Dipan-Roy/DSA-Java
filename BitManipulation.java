@@ -64,6 +64,20 @@ public class BitManipulation{
         // Time complexity : O(log n)
     }
 
+    public static int fastExpo(int a, int n){
+        int ans = 1;
+
+        while(n > 0){
+            if((n & 1) != 0){ // Check LSB
+                ans = ans * a;
+            }
+            a = a * a;
+            n = n>>1;
+        }
+
+        return ans;
+    }
+
     public static void main(String args[]){
         OddorEven(3); // odd
         OddorEven(6); // even
@@ -91,6 +105,9 @@ public class BitManipulation{
         System.out.println("-----------");
 
         System.out.println(countSetBits(10));
+        System.out.println("-----------");
+
+        System.out.println(fastExpo(5, 3));
         System.out.println("-----------");
     } 
 }
