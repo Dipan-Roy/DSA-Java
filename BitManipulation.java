@@ -123,5 +123,20 @@ public class BitManipulation{
 
         swap(5, 10);
         System.out.println("-----------");
+
+        // Convert uppercase character to lowercase
+        for (char ch = 'A'; ch <= 'Z'; ch++) {
+            System.out.print((char)(ch | ' ') + " ");
+            // prints abcdefghijklmnopqrstuvwxyz
+        }
+
+        // Trick: If you compare, each uppercase and lowercase letter differs by a single bit:
+        // 'A' = 65  = 0100 0001
+        // 'a' = 97  = 0110 0001
+        // Notice: the 6th bit (value 32, binary 0010 0000) is 0 in uppercase, 1 in lowercase.
+        // The space character ' ' has ASCII value 32 (Binary form: ' ' = 0010 0000)
+        // Bitwise OR (|) with 0010 0000 forces the 6th bit to 1.
+        // ch | ' ' → convert to lowercase (force 6th bit = 1).
+        // ch & '_' (underscore = 95 = 0101 1111) → convert to uppercase (force 6th bit = 0).
     } 
 }
