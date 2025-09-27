@@ -46,6 +46,10 @@ public class BitManipulation{
         return n & bitmask; 
     }
 
+    public static boolean isPowerOfTwo(int n){
+        return (n&(n-1)) == 0;
+    }
+
     public static void main(String args[]){
         OddorEven(3); // odd
         OddorEven(6); // even
@@ -69,6 +73,8 @@ public class BitManipulation{
         System.out.println(clearBitsInRange(10, 2, 4));
         System.out.println("-----------");
 
-        // test - remove later
+        System.out.println(isPowerOfTwo(16));
+        System.out.println("-----------");
+
     } 
 }
