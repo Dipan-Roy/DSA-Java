@@ -53,7 +53,7 @@ public class BitManipulation{
     public static int countSetBits(int n){
         int count = 0;
         while(n > 0){
-            if((n&1) != 0){
+            if((n&1) != 0){ // Check our LSB
                 count++;
             }
             n = n>>1;
