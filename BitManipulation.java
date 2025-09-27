@@ -78,6 +78,17 @@ public class BitManipulation{
         return ans;
     }
 
+    public static void swap(int a, int b){
+        System.out.println("Value BEFORE Swapping : a = " + a + " b = " + b);
+
+        // swap
+        a = a ^ b;
+        b = a ^ b;
+        a = a ^ b;
+
+        System.out.println("Value AFTER Swapping : a = " + a + " b = " + b);
+    }
+
     public static void main(String args[]){
         OddorEven(3); // odd
         OddorEven(6); // even
@@ -108,6 +119,9 @@ public class BitManipulation{
         System.out.println("-----------");
 
         System.out.println(fastExpo(5, 3));
+        System.out.println("-----------");
+
+        swap(5, 10);
         System.out.println("-----------");
     } 
 }
