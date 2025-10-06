@@ -30,6 +30,18 @@ public class Recursion{
         // Space complexity: O(n)
     }
 
+    public static int sumOfNaturalNos(int n){
+        if(n == 1){
+            return 1;
+        }
+        int sumOfnm1 = sumOfNaturalNos(n-1);
+        int sumOfn = n + sumOfnm1;
+        return sumOfn;
+
+        // Time complexity: O(n)
+        // Space complexity: O(n)
+    }
+
     public static void main(String args[]){
         int n = 5;
         printDec(n);
@@ -37,5 +49,6 @@ public class Recursion{
         printInc(n);
         System.out.println();
         System.out.println(factorial(n));
+        System.out.println(sumOfNaturalNos(n));
     }
 }
