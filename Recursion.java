@@ -18,10 +18,24 @@ public class Recursion{
         System.out.print(n + " ");
     }
 
+    public static int factorial(int n){
+        if(n == 0){
+            return 1;
+        }
+        int fnm1 = factorial(n-1);
+        int fn = n * fnm1;
+        return fn;
+
+        // Time complexity: O(n)
+        // Space complexity: O(n)
+    }
+
     public static void main(String args[]){
-        int n = 10;
+        int n = 5;
         printDec(n);
         System.out.println();
         printInc(n);
+        System.out.println();
+        System.out.println(factorial(n));
     }
 }
