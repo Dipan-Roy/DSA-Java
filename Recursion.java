@@ -50,6 +50,24 @@ public class Recursion{
         int fnm2 = fib(n-2);
         int fn = fnm1 + fnm2;
         return fn;
+
+        // Time complexity: O(2^n)
+        // space complexity: O(n)
+    }
+
+    public static boolean is_Sorted(int arr[], int i){
+        if(i == arr.length-1){
+            return true;
+        }
+
+        if(arr[i] > arr[i+1]){
+            return false;
+        }
+
+        return is_Sorted(arr, i+1);
+
+        // Time complexity: O(n)
+        // Space complexity: O(n)
     }
 
     public static void main(String args[]){
@@ -63,5 +81,9 @@ public class Recursion{
 
         // Print nth Fibonacci no.
         System.out.println(fib(8));
+
+        // check if array is sorted or not
+        int arr[] = {1,2,3,4,5};
+        System.out.println(is_Sorted(arr, 0));
     }
 }
