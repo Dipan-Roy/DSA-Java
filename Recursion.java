@@ -84,6 +84,28 @@ public class Recursion{
         // Space complexity: O(n)
     }
 
+    public static int lastOccurence(int arr[], int key, int i){
+        if(i == arr.length){
+            return -1;
+        }
+        int isFound = lastOccurence(arr, key, i+1);
+
+        if(isFound == -1 && arr[i] == key){
+            return i;
+        }
+
+        return isFound;
+    }
+
+    public static int power(int x, int n){
+        if(n == 0){
+            return 1;
+        }
+        return x * power(x, n-1);
+
+        // Time complexity: O(n)
+    }
+
     public static void main(String args[]){
         int n = 5;
         printDec(n);
@@ -102,6 +124,12 @@ public class Recursion{
 
         // First occurence
         System.out.println(firstOccurence(arr, 5, 0));
+
+        // Last occurence
+        System.out.println(lastOccurence(arr, 5, 0));
+
+        // Print x^n
+        System.out.println(power(2, 10));
 
     }
 }
