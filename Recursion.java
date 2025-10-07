@@ -70,6 +70,20 @@ public class Recursion{
         // Space complexity: O(n)
     }
 
+    public static int firstOccurence(int arr[], int key, int i){
+        if(i == arr.length-1){
+            return -1;
+        }
+        if(arr[i] == key){
+            return i;
+        }
+
+        return firstOccurence(arr, key, i+1);
+
+        // Time complexity: O(n)
+        // Space complexity: O(n)
+    }
+
     public static void main(String args[]){
         int n = 5;
         printDec(n);
@@ -83,7 +97,11 @@ public class Recursion{
         System.out.println(fib(8));
 
         // check if array is sorted or not
-        int arr[] = {1,2,3,4,5};
+        int arr[] = {1,2,3,4,5,5};
         System.out.println(is_Sorted(arr, 0));
+
+        // First occurence
+        System.out.println(firstOccurence(arr, 5, 0));
+
     }
 }
