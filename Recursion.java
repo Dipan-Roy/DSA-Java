@@ -111,8 +111,9 @@ public class Recursion{
             return 1;
         }
         int halfPower = optimisedPower(x, n/2);
-        int halfPowerSq = halfPower * halfPower;
+        int halfPowerSq = halfPower * halfPower; // if n is even
 
+        // if n is odd
         if(n % 2 != 0){
             halfPowerSq = x * halfPowerSq;
         }
