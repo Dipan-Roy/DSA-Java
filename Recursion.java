@@ -106,6 +106,22 @@ public class Recursion{
         // Time complexity: O(n)
     }
 
+    public static int optimisedPower(int x, int n){
+        if(n == 0){
+            return 1;
+        }
+        int halfPower = optimisedPower(x, n/2);
+        int halfPowerSq = halfPower * halfPower;
+
+        if(n % 2 != 0){
+            halfPowerSq = x * halfPowerSq;
+        }
+
+        return halfPowerSq;
+
+        // Time complexity: O(log n)
+    }
+
     public static void main(String args[]){
         int n = 5;
         printDec(n);
@@ -130,6 +146,9 @@ public class Recursion{
 
         // Print x^n
         System.out.println(power(2, 10));
+
+        // Print x^n (Optimised Approach)
+        System.out.println(optimisedPower(2, 5));
 
     }
 }
